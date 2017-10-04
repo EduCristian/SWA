@@ -1,4 +1,4 @@
-// Name and Email validation Function.
+//validation Function.
 function validation(){
     var name = document.getElementById("input_name");
     var email = document.getElementById("input_email");
@@ -53,8 +53,7 @@ window.onload=function(){
     });
 }
 
-
-
+/* Function to validate the whole form. Displays a confirmation message if the validation function (line 1) returns true */
 function ValidateForm(){
         var name = document.getElementById("input_name").value;
         var email = document.getElementById("input_email").value;
