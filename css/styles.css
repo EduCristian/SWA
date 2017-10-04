@@ -269,3 +269,25 @@ footer p { font-size: 13px; margin: 0; }
 .pintrest-icon { background: url(../img/pintrest-icon.png); height: 34px; width: 35px; display: block; text-indent: -9999px; }
 .wp1, .wp2, .wp3, .wp4, .wp5, .wp6 { visibility: hidden; }
 .bounceInLeft, .bounceInRight, .fadeInUp { visibility: visible; }
+
+
+/* Added CSS for the contact form */
+
+form {
+   max-width: 400px;
+   text-align: center;
+   margin: 20px auto;
+}
+
+input, textarea {
+     padding: 1em;
+     display: block;
+     width: 100%;
+     margin-top: 1em;
+     font-family: sans-serif;
+     resize: none;
+}
+  
+  textarea {
+      height: 126px;
+  }
