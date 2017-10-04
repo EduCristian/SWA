@@ -12,6 +12,7 @@
 		<link rel="stylesheet" href="css/flexslider.css?v=1.2" type="text/css">
 		<link rel="stylesheet" href="css/animate.css" type="text/css">
 		<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        <script type="text/javascript" src="js/form.js"></script>
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -236,11 +237,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3 sign-up">
-						<h2 class="logo-header">Stay on the saddle!</h2>
-						<form name="signup-form">
-							<input class="signup-input" type="email" name="email_address" value="" placeholder="enter your email..." title="Please enter a valid email address." required>
-							<button type="submit" class="submit-btn">GO</button>
-						</form>
+						<h2 class="logo-header">Stay on the saddle: Contact us!</h2>
+						<!-- Contact Form -->
+                        <form name="signup-form" id="id_form" >
+                            <input type="text" id="input_name" placeholder="Name"><br>
+                            <input type="text" id="input_email" placeholder="Email address"><br>
+                            <input type="text" id="input_subject" placeholder="Subject"><br>
+                            <textarea name="message" type="text" id="input_message"  rows="8" cols="50" placeholder="Message" style="padding-bottom: 20px"></textarea>
+                            <input type="submit" value="Send" id="input-submit">
+                        </form>
+		 
 					</div>
 				</div>
 			</div>
@@ -264,6 +270,7 @@
 					</div>
 					<div class="col-md-4 footer-rightcol">
 						<p>Designed by <a href="#"><img src="img/yebo-icon.png" alt="Yebo Logo"></a></p>
+						<p class="nopadding">Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a></p>
 					</div>
 				</div>
 			</div>
