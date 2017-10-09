@@ -262,7 +262,18 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> 
+        <section class="discover">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-4 col-md-offset-4" style="color:white">
+						<input type="range" min="20" max="110" value="50" step="10" onChange="sliderChange(this.value)"/>
+                        <br /><br />
+                        Price Range = <span id="sliderStatus">50</span>
+					</div>
+				</div>
+			</div>
+		</section>
 		<!--<section class="discover">
 			<div class="container-fluid">
 				<div class="row">
@@ -275,7 +286,7 @@
         <div>
             
         <section>
-            <input type="text" id="searchInput" onkeyup="saddleFilter()" placeholder="Filter saddles shown above..." title="Type in a name">
+            <input type="text" id="searchInput" onkeyup="saddleFilter()" placeholder="Filter saddles shown below..." title="Type in a name">
             <ul id="unorderList">
                 <li><a href="#/">Leather: 100 DKK</a></li>
                 <li><a href="#/">Custom: 400 DKK</a></li>
