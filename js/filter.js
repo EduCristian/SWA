@@ -1,8 +1,3 @@
-function sliderChange(val)
-{
-	document.getElementById('sliderStatus').innerHTML = val;
-}
-
 function saddleFilter() 
 {
 	var input, filter, unorderedList, li, a, i;
@@ -46,22 +41,61 @@ var saddleList =
 	saddle1, saddle2, saddle3, saddle4, saddle5, saddle6, saddle7, saddle8
 ];
 
-function printArr(a)
+
+var saddleArray = document.getElementsByClassName("img");
+var length = saddleArray.length;
+var counter = 0;
+for(var i of saddleArray)
 {
-	for(var i = 0; i <= a.length-1; i++)
+	i.addEventListener("mouseover", function(e)
 	{
-		console.log(a[i])
-	}
+		console.log(e);
+		
+		var div = document.createElement("div");
+		div.style.top = "" + e.screenX  + "px";
+		div.style.left = "" + e.screenY + "px";
+		div.style.width = "300px";
+		div.style.height = "300px";
+		div.style.background = "red";
+		div.style.color = "white";
+		div.style.position = "absolute";
+		div.style.zIndex = "1000";
+		div.innerHTML = "Model: " + saddleList[counter].name +
+						"<br /> Price: " + saddleList[counter].price + "DKK" +
+						"<br /> Size: " + saddleList[counter].size + "cm" +
+						"<br /> Colour: " + saddleList[counter].colour;
+		
+		document.body.appendChild(div);
+		counter++;
+	});
+		
 }
+counter = 0;
 function filterByPrice(item)
 {
-	if(item.price >= 80){return true;}
+	var maxPrice = document.getElementById('sliderStatus1');
+	console.log(maxPrice);
+	if(item.price >= Number(maxPrice){return true;}
 	return false;
 }
 
 function filteredList(list)
 {
 	saddleList = list.filter(filterByPrice);
+}
+
+function sliderChange(val)
+{
+	document.getElementById('sliderStatus').innerHTML = val;
+	filteredList(saddleList);
+}
+
+function printArr(a)
+{
+	for(var i = 0; i <= a.length-1; i++)
+	{
+		console.log(a[i])
+	}
 }
 
 saddleFilter();
