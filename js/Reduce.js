@@ -1,5 +1,7 @@
 var unorderList = document.getElementById('unorderList');
 
+console.log(unorderList);
+
 function getNumbers(array){
     var numbers = [];
     var number = '';
@@ -30,5 +32,5 @@ function average(numberArray){
 return avg;
 }
 
-document.createElement('label1')
-document.getElementById('label').innerHTML = average(getNumbers(unorderList.children));
+
+document.getElementById('averageP').innerHTML = average(getNumbers(unorderList.children));
