@@ -73,16 +73,18 @@ for(var i of saddleArray)
 counter = 0;
 function filterByPrice(item)
 {
-	var maxPrice = document.getElementById('sliderStatus1');
-	console.log(maxPrice);
-	if(item.price >= Number(maxPrice){return true;}
+    
+	if(item.price >= 80){return true;}
 	return false;
 }
 
+
+
 function filteredList(list)
 {
-	saddleList = list.filter(filterByPrice);
+saddleList = list.filter(filterByPrice);
 }
+
 
 function sliderChange(val)
 {
@@ -99,3 +101,7 @@ function printArr(a)
 }
 
 saddleFilter();
+
+printArr(saddleList)
+filteredList(saddleList)
+printArr(saddleList);
