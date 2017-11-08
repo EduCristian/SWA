@@ -52,8 +52,8 @@ for(var i of saddleArray)
 		console.log(e);
 		
 		var div = document.createElement("div");
-		div.style.top = "" + e.screenX  + "px";
-		div.style.left = "" + e.screenY + "px";
+		div.style.top = "" + e.pageY  + "px";
+		div.style.left = "" + e.pageX + "px";
 		div.style.width = "300px";
 		div.style.height = "300px";
 		div.style.background = "red";
@@ -71,6 +71,7 @@ for(var i of saddleArray)
 		
 }
 counter = 0;
+
 function filterByPrice(item)
 {
     

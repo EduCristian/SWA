@@ -14,14 +14,10 @@ var menu = [
 
 var menuHeader = document.getElementsByClassName("clearfix");
 
-//0,2,3,5
-
 function populateMenu(menu1){
-    menuHeader[0].children[0].textContent = menu[0].name
-    menuHeader[0].children[2].textContent = menu[1].name
-    menuHeader[0].children[3].textContent = menu[2].name
-    menuHeader[0].children[5].textContent = menu[3].name
-}
+    var menuElements = [0, 2, 3, 5]
+    menuElements.forEach{ (e, i) => menuHeader[0].children[e].textContent = menu[i].name }
+    }
 
 populateMenu(menu)
     
