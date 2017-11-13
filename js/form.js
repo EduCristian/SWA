@@ -9,6 +9,7 @@ function validation(){
         name.setCustomValidity("Please enter your name.");
         console.log("Check the name");
         name.focus();
+        return false;
     } else {
         name.setCustomValidity('');
     }
@@ -17,6 +18,7 @@ function validation(){
         email.setCustomValidity("Please enter an e-mail address.");
                 console.log("Check the email");
         email.focus();
+        return false;
     } else {
         email.setCustomValidity('');
     }
@@ -27,6 +29,7 @@ function validation(){
     if (email.value.indexOf("@", 0) < 0){
         email.setCustomValidity("Please enter a valid e-mail address.");
         email.focus();
+        return false;
     } else {
         email.setCustomValidity('');
     }
@@ -34,6 +37,7 @@ function validation(){
     if (email.value.indexOf(".", 0) < 0){
         email.setCustomValidity("Please enter a valid e-mail address.");
         email.focus();
+        return false;
     } else {
         email.setCustomValidity('');
     }
@@ -41,6 +45,7 @@ function validation(){
     if (subject.value === ""){
         subject.setCustomValidity("Please enter a subject for your enquiry.")
         subject.focus();
+        return false;
     } else {
         subject.setCustomValidity('');
     }
@@ -48,9 +53,11 @@ function validation(){
     if (messag.value === "") {
         messag.setCustomValidity("Please enter a message!");
         messag.focus();
+        return false;
     } else {
         messag.setCustomValidity('');
     }
+    return true;
 }
 
 var form = document.getElementById('id_form');
@@ -58,15 +65,16 @@ var submitButton = document.getElementById('input-submit');
 
 submitButton.onclick = function () { ValidateForm(); };
 
-/* Function to validate the whole form. Displays a confirmation message if the validation function (line 1) returns true */
+/* Function to validate the whole form.*/ 
 function ValidateForm(){
             console.log("hey");
-        var valid = validation(); // Calling validation function
-
+            var valid = validation(); // Calling validation function
+        if(valid) {
             console.log("hello");
             //document.getElementById("id_form").submit(); //form submission that we don't need for now
             window.confirm(" Name: " + document.getElementById("input_name").value 
                            + " \n Email: " + document.getElementById("input_email").value 
                            + " \n Subject: " + document.getElementById("input_subject").value 
                            + " \n Message: " + document.getElementById("input_message").value + "\n\n Confirm the submission");
+        }
 }
