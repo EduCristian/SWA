@@ -9,7 +9,6 @@ function getNumbers(HTMLcollection)
 {
     console.log("Value: " + HTMLcollection[0].textContent)
     var CollectiontoArray = Array.from(HTMLcollection)
-    alert(typeof CollectiontoArray[0].toString())
  
     numbers = CollectiontoArray.map(function(element){
         var number = '';
