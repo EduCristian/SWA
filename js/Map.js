@@ -2,54 +2,33 @@ var unorderList = document.getElementById('unorderList');
 
 var numbers = [];
 var halvedNumbers = [];
+var intNumber = 0;
+
 
 function getNumbers(HTMLcollection) 
 {
-    
-    // for (var i = 0; i < array.length; i++){
-    //     for (var j = 0; j < array[i].textContent.length; j++)
-    //     {
-    //         if(  array[i].textContent.charAt(j) >= '0' && array[i].textContent.charAt(j) <= '9')
-    //         {
-    //             number += array[i].textContent.charAt(j);
-    //         }
-    //     }
-
-
-    //     numbers.push(parseInt(number));
-    //     number = '';
-    // }
+    console.log("Value: " + HTMLcollection[0].textContent)
     var CollectiontoArray = Array.from(HTMLcollection)
-
+    alert(typeof CollectiontoArray[0].toString())
+ 
     numbers = CollectiontoArray.map(function(element){
         var number = '';
-        for (var j = 0; j < CollectiontoArray.length; j++)
+        var content = element.textContent
+        for (var j = 0; j < content.length; j++)
         {
-            if(CollectiontoArray[j] >= '0' && CollectiontoArray[j] <= '9')
+            if(content[j] >= '0' && content[j] <= '9')
             {
-                number += CollectiontoArray[j];
+                number += content[j];
             }
         }
-
-        return number;
+        
+        console.log("Number: " + number);
+        intNumber = parseInt(number);
+        
+        return intNumber;
     })
-
-    //return numbers;
 }
 
-function collectNumberFromString(string){
-        var number = '';
-        for (var j = 0; j < string[i].textContent.length; j++)
-        {
-            if(  string[i].textContent.charAt(j) >= '0' && string[i].textContent.charAt(j) <= '9')
-            {
-                number += string[i].textContent.charAt(j);
-            }
-        }
-        var intNumber = parseInt(number);
-        console(intNumber);
-        return intNumber;
-    }
 
 function getHalvedNumbers(numberArray){
     halvedNumbers = numbers.map(function(num){return num / 2;})
@@ -67,12 +46,9 @@ function replaceWithNewNumbers(oldArray){
             if(oldArray[i].textContent.charAt(j) == ':'){
                 j++;
                 newArray[i] = oldArray[i].textContent.slice(0, j) + " " + halvedNumbers[i] + oldArray[i].textContent.slice(j + 5);
-                console.log(oldArray[i].textContent.slice(0, j));
-                console.log(oldArray[i].textContent.slice(j + 5));
             }
         }
     }
-
     return newArray;
 }
 
@@ -88,5 +64,3 @@ function salesOf()
 }
 
 salesOf();
-
-// var shopItem.Prototype = {}
